@@ -57,31 +57,32 @@ while True:
     print('2 - Descriptografar')
     print ('3 - Sair')
 
-    painel = input('O que deseja: ')
+    painel = input('O que deseja: ') # Este é o menu para estar realizando as operações de criptografia
 
-    if painel == '1': 
+    if painel == '1': # Aqui é aonde funciona a criptografia do texto
 
-        texto = input("Digite o texto: ")  
-        if len(texto) > 128:
+        texto = input("Digite o texto: ")  # Solicita o texto de entrada
+        if len(texto) > 128: # limitador de caracter
             continue
-        chave = int(input("Digite a chave da cifra de César: "))  
-        criptografado = cesar(texto, chave, 'criptografar')  
-        print("Texto criptografado: " + criptografado)  
+        chave = int(input("Digite a chave da cifra de César: "))   # Solicita a chave de criptografia
+        criptografado = cesar(texto, chave, 'criptografar')  # Chama a função para criptografar
+        print("Texto criptografado: " + criptografado)  # Exibe o resultado criptografado
 
-    elif painel == '2':  
 
-        texto = input("Digite o texto: ")
-        if len(texto) > 128:
-            chave = int(input("Digite a chave da cifra de César: ")) 
-            continue 
-        descriptografado = cesar(texto, chave, 'descriptografar')  
-        print("Texto descriptografado: " + descriptografado)  
+    elif painel == '2': # Aqui é aonde funciona a descriptografia do texto
 
-    elif painel == '3': 
+        texto = input("Digite o texto: ") # Solicita o texto de entrada
+        if len(texto) > 128: # limitador de caracter
+            continue
+        chave = int(input("Digite a chave da cifra de César: ")) # Solicita a chave de descriptografia
+        descriptografado = cesar(texto, chave, 'descriptografar')  # Chama a função para descriptografar
+        print("Texto descriptografado: " + descriptografado)   # Exibe o resultado descriptografado
+
+    elif painel == '3': # Se a escolha for 3, sai do programa
 
         print("Saindo...")
         break
 
-    else:  
+    else:  # Se a escolha for inválida
 
-        print("Opção inválida. Tente novamente.")
+        print("Opção inválida. Tente novamente.") # Exibe uma mensagem de erro

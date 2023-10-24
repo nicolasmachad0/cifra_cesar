@@ -12,7 +12,7 @@ def cesar(texto, chave, agir):
     if len(texto) > 128:
         return "O texto deve ter no máximo 128 caracteres." # Define um limeite de 128 caracteres 
     resultado = '' # Inicializa uma string vazia para armazenar o resultado
-    alfabeto = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' #  alfabeto que vai ser utilizado
+    alfabeto = 'ABCDEFGHIJKLMNOPQRSTUVWXYZÀÁÃÂÉÊẼÈÓÒÔÕÌÎĨÍÚÙÛŨÇ' #  alfabeto que vai ser utilizado
 
 # Itera cada caractere no texto de entrada
     for char in texto:     

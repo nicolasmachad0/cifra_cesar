@@ -5,12 +5,14 @@
 # LUCAS BULBOV NOGUEIRA
 # NICHOLAS PEREIRA DE BRITES NASCIMENTO
 # NICOLAS MACHADO FOGAÇA
+#   
+#
 
 # Função que implementa a cifra de César
 
 def cesar(texto, chave, agir): 
     if len(texto) > 128:
-        return "O texto deve ter no máximo 128 caracteres." # Define um limeite de 128 caracteres 
+        return "O texto deve ter no máximo 128 caracteres."
     resultado = '' # Inicializa uma string vazia para armazenar o resultado
     alfabeto = 'ABCDEFGHIJKLMNOPQRSTUVWXYZÀÁÃÂÉÊẼÈÓÒÔÕÌÎĨÍÚÙÛŨÇ' #  alfabeto que vai ser utilizado
 
@@ -53,36 +55,33 @@ print('APS 2023 - Cifra de Cesar')
 
 while True:
     print('\n')
-    print('1 - Critptografar')
+    print('1 - Criptografar')
     print('2 - Descriptografar')
-    print ('3 - Sair')
+    print('3 - Sair')
 
     painel = input('O que deseja: ') # Este é o menu para estar realizando as operações de criptografia
 
     if painel == '1': # Aqui é aonde funciona a criptografia do texto
-
-        texto = input("Digite o texto: ")  # Solicita o texto de entrada
+        texto = input("Digite o texto: ")# Solicita o texto de entrada
         if len(texto) > 128: # limitador de caracter
+            print("O texto deve ter no máximo 128 caracteres.")
             continue
-        chave = int(input("Digite a chave da cifra de César: "))   # Solicita a chave de criptografia
-        criptografado = cesar(texto, chave, 'criptografar')  # Chama a função para criptografar
-        print("Texto criptografado: " + criptografado)  # Exibe o resultado criptografado
-
+        chave = int(input("Digite a chave da cifra de César: ")) # Solicita a chave de criptografia
+        criptografado = cesar(texto, chave, 'criptografar') # Chama a função para criptografar
+        print("Texto criptografado: " + criptografado) # Exibe o resultado criptografado
 
     elif painel == '2': # Aqui é aonde funciona a descriptografia do texto
-
         texto = input("Digite o texto: ") # Solicita o texto de entrada
-        if len(texto) > 128: # limitador de caracter
+        if len(texto) > 128:  # limitador de caracter
+            print("O texto deve ter no máximo 128 caracteres.") 
             continue
         chave = int(input("Digite a chave da cifra de César: ")) # Solicita a chave de descriptografia
         descriptografado = cesar(texto, chave, 'descriptografar')  # Chama a função para descriptografar
-        print("Texto descriptografado: " + descriptografado)   # Exibe o resultado descriptografado
+        print("Texto descriptografado: " + descriptografado) # Exibe o resultado descriptografado
 
-    elif painel == '3': # Se a escolha for 3, sai do programa
-
+    elif painel == '3':  # Se a escolha for 3, sai do programa
         print("Saindo...")
         break
 
-    else:  # Se a escolha for inválida
-
+    else: # Se a escolha for inválida
         print("Opção inválida. Tente novamente.") # Exibe uma mensagem de erro

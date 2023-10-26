@@ -24,7 +24,7 @@ def cesar(texto, chave, agir):
             # Verifica a ação a ser executada (criptografar ou descriptografar)
             if agir == 'criptografar':
                 if char_maiusculo in alfabeto: # Verifica se o caractere está no alfabeto
-                    calculo = (alfabeto.index(char_maiusculo) + chave) % 26  # Calcula a nova posição da letra após a criptografia
+                    calculo = (alfabeto.index(char_maiusculo) + chave) % 48  # Calcula a nova posição da letra após a criptografia
                     texto_cifrado = alfabeto[calculo]# Obtém o caractere cifrado
 
                     if char.islower(): 
@@ -35,7 +35,7 @@ def cesar(texto, chave, agir):
             elif agir == 'descriptografar':
 
                 if char_maiusculo in alfabeto:  # Calcula a nova posição da letra após a descriptografia
-                    calculo = (alfabeto.index(char_maiusculo) - chave) % 26 # Calcula a nova posição da letra após a descriptografia
+                    calculo = (alfabeto.index(char_maiusculo) - chave) % 48 # Calcula a nova posição da letra após a descriptografia
                     texto_cifrado = alfabeto[calculo] # Obtém o caractere descriptografado
 
                     if char.islower():

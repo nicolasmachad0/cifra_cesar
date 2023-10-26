@@ -51,21 +51,21 @@ def cesar(texto, chave, agir):
 
 # Função que implementa a cifra de César
 
-print('APS 2023 - Cifra de Cesar')
+print('APS 2023 - Cifra de Cesar') # Titulo do Softaware
 
-while True:
-    print('\n')
-    print('1 - Criptografar')
-    print('2 - Descriptografar')
-    print('3 - Sair')
+while True: # Faz com que o menu funcione em looping 
+    print('\n') # serve para dar um espçao entre os prints
+    print('1 - Criptografar') # opção de criptografar
+    print('2 - Descriptografar') # Opção de Descriptografar
+    print('3 - Sair') # Opção de sair do software
 
     painel = input('O que deseja: ') # Este é o menu para estar realizando as operações de criptografia
 
     if painel == '1': # Aqui é aonde funciona a criptografia do texto
         texto = input("Digite o texto: ")# Solicita o texto de entrada
         if len(texto) > 128: # limitador de caracter
-            print("O texto deve ter no máximo 128 caracteres.")
-            continue
+            print("O texto deve ter no máximo 128 caracteres.") # Mostra mensagem de texto com no maxio de 128 caracteres
+            continue # Retorna ao memu para que seja feito todo o processo novamente
         chave = int(input("Digite a chave da cifra de César: ")) # Solicita a chave de criptografia
         criptografado = cesar(texto, chave, 'criptografar') # Chama a função para criptografar
         print("Texto criptografado: " + criptografado) # Exibe o resultado criptografado
@@ -73,15 +73,15 @@ while True:
     elif painel == '2': # Aqui é aonde funciona a descriptografia do texto
         texto = input("Digite o texto: ") # Solicita o texto de entrada
         if len(texto) > 128:  # limitador de caracter
-            print("O texto deve ter no máximo 128 caracteres.") 
-            continue
+            print("O texto deve ter no máximo 128 caracteres.") # Mostra mensagem de texto com no maxio de 128 caracteres
+            continue # Retorna ao memu para que seja feito todo o processo novamente
         chave = int(input("Digite a chave da cifra de César: ")) # Solicita a chave de descriptografia
         descriptografado = cesar(texto, chave, 'descriptografar')  # Chama a função para descriptografar
         print("Texto descriptografado: " + descriptografado) # Exibe o resultado descriptografado
 
     elif painel == '3':  # Se a escolha for 3, sai do programa
-        print("Saindo...")
-        break
+        print("Saindo...") # Mostra na tela a mensagem de saida
+        break # Encerra o programa
 
     else: # Se a escolha for inválida
         print("Opção inválida. Tente novamente.") # Exibe uma mensagem de erro

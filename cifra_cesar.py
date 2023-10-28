@@ -10,35 +10,41 @@
 
 # Função que implementa a cifra de César
 
+# Definição das variaveis mais importantes do software
 def cesar(texto, chave, agir): 
-    if len(texto) > 128:
-        return "O texto deve ter no máximo 128 caracteres."
+    # Irá reconhecer se o texto tem mais de 128 caracteres
+    if len(texto) > 128: 
+        return "O texto deve ter no máximo 128 caracteres." # Texto para avisar ter mais de 128 caracteres
     resultado = '' # Inicializa uma string vazia para armazenar o resultado
     alfabeto = 'ABCDEFGHIJKLMNOPQRSTUVWXYZÀÁÃÂÉÊẼÈÓÒÔÕÌÎĨÍÚÙÛŨÇ' #  alfabeto que vai ser utilizado
 
 # Itera cada caractere no texto de entrada
-    for char in texto:     
+    for char in texto:  
         if char.isalpha(): # Verifica se o caractere é uma letra
             char_maiusculo = char.upper() # Converte o caractere para maiúsculas
             
             # Verifica a ação a ser executada (criptografar ou descriptografar)
+            
+            # Ação da Criptografia
             if agir == 'criptografar':
                 if char_maiusculo in alfabeto: # Verifica se o caractere está no alfabeto
                     calculo = (alfabeto.index(char_maiusculo) + chave) % 48  # Calcula a nova posição da letra após a criptografia
                     texto_cifrado = alfabeto[calculo]# Obtém o caractere cifrado
-
-                    if char.islower(): 
+                    
+                    # Para caracterese Minusculos
+                    if char.islower():  
                         texto_cifrado = texto_cifrado.lower() # Mantém o caractere em minúsculas
                 else:
                     texto_cifrado = char # Mantém caracteres que não estão no alfabeto inalterados
 
-            elif agir == 'descriptografar':
+            # Ação da Descriptografia
+            elif agir == 'descriptografar': 
 
                 if char_maiusculo in alfabeto:  # Calcula a nova posição da letra após a descriptografia
                     calculo = (alfabeto.index(char_maiusculo) - chave) % 48 # Calcula a nova posição da letra após a descriptografia
                     texto_cifrado = alfabeto[calculo] # Obtém o caractere descriptografado
 
-                    if char.islower():
+                    if char.islower(): # Para caracterese Minusculos
                         texto_cifrado = texto_cifrado.lower() # Mantém o caractere em minúsculas
                 else:
                     texto_cifrado = char # Mantém caracteres que não estão no alfabeto inalterados
